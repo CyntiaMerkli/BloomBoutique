@@ -1,0 +1,82 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BloomBoutique – Help Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Help and documentation for using BloomBoutique.">
+
+    <!-- base style -->
+    <link rel="stylesheet" href="/BloomBoutique/styles.css?v=1">
+
+    <!-- dynamic themes -->
+    <link id="theme-link" rel="stylesheet" href="/BloomBoutique/themes/theme-default.css">
+
+    <!-- fetch and apply active theme -->
+    <script>
+        fetch('/BloomBoutique/api/get_theme.php')
+          .then(res => res.json())
+          .then(data => {
+            document.getElementById('theme-link').href =
+              '/BloomBoutique/themes/' + data.theme;
+          })
+          .catch(console.error);
+    </script>
+</head>
+
+<body>
+    <!-- shared header-->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/header.php')
+          .then(r => r.text())
+          .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+          })
+          .catch(console.error);
+    </script>
+    <!--links to wiki pages-->
+    <main class="container">
+        <h2>Help & Documentation</h2>
+        <p>Welcome to the BloomBoutique Help Center. Choose a topic below:</p>
+        <ul class="help-list">
+            <li>
+                <a href="register.php" class="btn">How to Register</a><br>
+                <small>Create an account so you can shop and track orders.</small>
+            </li>
+            <li>
+                <a href="build-bouquet.php" class="btn">Building Your Own Bouquet</a><br>
+                <small>Step‑by‑step guide to customize and add a bouquet to your cart.</small>
+            </li>
+            <li>
+                <a href="checkout.php" class="btn">How to Check Out</a><br>
+                <small>Review your cart, enter shipping details, and place your order.</small>
+            </li>
+            <li>
+                <a href="profile.php" class="btn">Managing Your Profile</a><br>
+                <small>View past orders.</small>
+            </li>
+            <li>
+                <a href="admin-themes.php" class="btn">Admin</a><br>
+                <small>(Admins only) How to change the site’s look & feel.</small>
+            </li>
+        </ul>
+    </main>
+
+    <!-- shared footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/footer.php')
+          .then(r => r.text())
+          .then(html => {
+            document.getElementById('footer-placeholder').innerHTML = html;
+          })
+          .catch(console.error);
+    </script>
+</body>
+
+</html>
