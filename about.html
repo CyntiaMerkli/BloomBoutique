@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BloomBoutique – About Us</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Learn about BloomBoutique: story and mission.">
+    <meta name="keywords" content="flowers, bouquets, online flower shop, BloomBoutique, About us">
+
+    <!--Base site styles -->
+    <link rel="stylesheet" href="/BloomBoutique/styles.css?v=1">
+
+    <!--Placeholder for theme CSS -->
+    <link id="theme-link" rel="stylesheet" href="/BloomBoutique/themes/theme-default.css">
+
+    <!-- load active theme dynamically -->
+    <script>
+        fetch('/BloomBoutique/api/get_theme.php')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('theme-link').href =
+          '/BloomBoutique/themes/' + data.theme;
+      })
+      .catch(console.error);
+    </script>
+</head>
+
+<body>
+    <!-- Use shared header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/header.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+
+    <!--About the website -->
+    <main class="container">
+        <h2>About Us</h2>
+        <p>At BloomBoutique, we believe in the beauty of flowers to brighten every moment. Founded in 2023 by floral
+            enthusiasts, our mission is to deliver fresh, exquisite bouquets anywhere you need them.</p>
+
+        <section>
+            <h3>Our Story</h3>
+            <p>BloomBoutique is a school project website for a fake flower shop. The site is meant to show various flowers, extra items, 
+            and give customers the option to build their own bouquet. On this site you can register an account, login and logout of your account, add products to your cart, 
+            checkout, and view your orders. Users can also leave messages for the admin and choose among different options for their products. </p>
+
+            <p>The website also includes an admin side. You must hard code a user as an admin member on the bloomboutique database. When an admin account is logged in, they gain access to 
+            the admin page, where they can change the website theme manage products, view customer messages, and view customer orders. Only admin can access these pages, no user account has access. </p>
+
+            <p>All pictures used throughout the website were either taken by myself or taken from copyright free picture websites. </p>
+
+            
+        </section>
+    </main>
+
+    <!-- Shared footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/footer.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+</body>
+
+</html>

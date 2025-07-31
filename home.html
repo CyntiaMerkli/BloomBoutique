@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BloomBoutique – Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="BloomBoutique: Fresh flowers delivered to your doorstep.">
+    <meta name="keywords" content="Home, flowers, bouquets, online flower shop, BloomBoutique">
+
+    <!-- base style -->
+    <link rel="stylesheet" href="/BloomBoutique/styles.css?v=1">
+
+    <!-- dynamic theme -->
+    <link id="theme-link" rel="stylesheet" href="/BloomBoutique/themes/theme-default.css">
+
+    <!-- apply dynamic theme -->
+    <script>
+        fetch('/BloomBoutique/api/get_theme.php')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('theme-link').href =
+          '/BloomBoutique/themes/' + data.theme;
+      })
+      .catch(console.error);
+    </script>
+</head>
+
+<body>
+    <!-- shared header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/header.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+
+    <!-- Home page content -->
+    <main class="container">
+        <section class="hero">
+            <h2>Welcome to BloomBoutique</h2>
+            <p>Your premier online flower shop — fresh bouquets delivered fast.</p>
+            <a href="catalog.php" class="btn">Shop Now</a>
+        </section>
+    </main>
+
+    <!-- shared footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/footer.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+</body>
+
+</html>

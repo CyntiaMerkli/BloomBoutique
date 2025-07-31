@@ -1,0 +1,536 @@
+/*this page was kind of taken over by the themes in the themese folder*/
+
+
+/* global styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightyellow;
+    color: #271383;
+}
+
+/* header */
+header {
+    background-color: lightpink;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* navigation buttons */
+nav {
+    background-color: lightpink;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #e91e63;
+    font-weight: bold;
+    border: 1px solid #e91e63;
+    border-radius: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #e91e63;
+    color: #fff;
+}
+
+/* main content area */
+main {
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #e91e63;
+    color: #fff;
+    padding: 12px 24px;
+    border: 1px solid #e91e63;
+    border-radius: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #d81b60;
+}
+
+/* footer */
+footer {
+    background-color: lightpink;
+    text-align: center;
+    padding: 15px 0;
+    color: #333;
+    margin-top: 40px;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 16px;
+    text-align: center;
+    transition: box-shadow .3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    display: block;
+    width: 120px !important;
+    
+    height: auto !important;
+    
+    margin: 0 auto 12px;
+}
+
+.product-card h3 {
+    margin: 12px 0 8px;
+    font-size: 1.1rem;
+}
+
+.product-card p {
+    color: #6A1B9A;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* product grid styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    
+    gap: 16px;
+    margin: 40px auto;
+    max-width: 800px;
+    
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+    text-align: center;
+    transition: box-shadow .3s;
+    max-width: 150px;
+    
+    margin: 0 auto;
+    
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    display: block;
+    width: 120px !important;
+    height: auto !important;
+    margin: 0 auto 8px;
+}
+
+.product-card h3 {
+    margin: 8px 0 4px;
+    font-size: 1rem;
+}
+
+.product-card p {
+    color: #6A1B9A;
+    font-weight: bold;
+    margin: 0;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+}
+
+.product-card p {
+    color: #6A1B9A;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* cart table styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #F8BBD0;
+    
+    text-align: left;
+}
+
+btn {
+    
+}
+
+/* dashboard container */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: Arial, sans-serif;
+}
+
+/* summary cards */
+.stats-cards {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stats-cards .card {
+    flex: 1;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stats-cards .card h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.stats-cards .card p {
+    margin: 0.5rem 0 0;
+    color: #555;
+}
+
+/* recent orders table */
+.recent-orders table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.recent-orders th,
+.recent-orders td {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+}
+
+.recent-orders th {
+    background: #f0f0f0;
+    text-align: left;
+}
+
+/* quick actions */
+.quick-actions {
+    margin-top: 2rem;
+}
+
+.quick-actions .actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.quick-actions .btn {
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    background: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quick-actions .btn.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.quick-actions .btn.danger {
+    background: #f44336;
+}
+
+/* section headings */
+.dashboard-container h2,
+.dashboard-container h3 {
+    margin-bottom: 1rem;
+}
+/* dashboard container */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.dashboard-hero {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-hero h2 {
+    margin: 0 0 .5rem;
+    font-size: 2rem;
+}
+
+.dashboard-hero p {
+    margin: 0;
+    color: #555;
+}
+
+/* Statistic Cards */
+.stats-cards {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card .card-icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.metric-card .card-info h3 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.metric-card .card-info p {
+    margin: .25rem 0 0;
+    color: #777;
+}
+
+/* recent orders card */
+.recent-orders.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.recent-orders h3 {
+    margin-top: 0;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: .75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.orders-table th {
+    background: #f9f9f9;
+    text-align: left;
+}
+
+.orders-table td.text-right {
+    text-align: right;
+}
+
+.table-footer {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+/* quick actions */
+.quick-actions h3 {
+    margin-bottom: .5rem;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.quick-actions .btn {
+    display: block;
+    text-align: center;
+    padding: .75rem;
+    background: #e91e63;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background .2s;
+}
+
+.quick-actions .btn:hover {
+    background: #d81b60;
+}
+
+.quick-actions .btn.danger {
+    background: #ff5252;
+}
+
+.quick-actions .btn.danger:hover {
+    background: #ff1744;
+}
+
+/* admin panel container */
+.admin-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+/*card wrapper */
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* card title */
+.card-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #271383;
+}
+
+/* alerts */
+.alert.success {
+    background: #e6ffed;
+    border: 1px solid #b7eb8f;
+    color: #389e0d;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* form layout */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: lightyellow;
+}
+
+/* actions row */
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* primary button inherits your .btn */
+.btn.secondary {
+    background: lightpink;
+    color: #271383;
+    border: 1px solid #e91e63;
+}

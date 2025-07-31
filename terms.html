@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BloomBoutique – Terms &amp; Privacy</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Terms and Privacy policy for BloomBoutique.">
+    <meta name="keywords" content="terms, conditions, flowers, bouquets, online flower shop, BloomBoutique">
+
+    <!-- base site CSS -->
+    <link rel="stylesheet" href="/BloomBoutique/styles.css?v=1">
+
+    <!-- for dynamic themes -->
+    <link id="theme-link" rel="stylesheet" href="/BloomBoutique/themes/theme-default.css">
+
+    <!-- load active theme -->
+    <script>
+        fetch('/BloomBoutique/api/get_theme.php')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('theme-link').href =
+          '/BloomBoutique/themes/' + data.theme;
+      })
+      .catch(console.error);
+    </script>
+</head>
+
+<body>
+    <!-- shared header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/header.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+
+    <!-- page content -->
+    <main class="container">
+        <h2>Terms of Service</h2>
+        <section>
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing BloomBoutique, you agree to these Terms of Service.</p>
+        </section>
+
+        <h2>Privacy Policy</h2>
+        <section>
+            <h3>1. Information We Collect</h3>
+            <p>Details on data collection, storage, and usage.</p>
+        </section>
+    </main>
+
+    <!-- 6) shared footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/footer.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BloomBoutique – Contact Us</title>
+    <meta name="description" content="Get in touch with BloomBoutique.">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="contact, message, flowers, bouquets, online flower shop, BloomBoutique">
+
+    <!-- Base site styles -->
+    <link rel="stylesheet" href="/BloomBoutique/styles.css?v=1">
+
+    <!--load the current theme CSS using get_theme.php -->
+    <script>
+        fetch('/BloomBoutique/api/get_theme.php')
+      .then(r => r.json())
+      .then(data => {
+        const link = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.href = '/BloomBoutique/themes/' + data.theme;
+        document.head.appendChild(link);
+      })
+      .catch(console.error);
+    </script>
+</head>
+
+<body>
+    <!--shared header/nav -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/header.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+<!--form for user to leave message-->
+    <main class="container">
+        <h2>Contact Us</h2>
+
+        <div id="contact-messages"></div>
+
+        <form id="contact-form" class="form-group">
+            <label>
+        Name:<br>
+        <input type="text" name="name" required>
+      </label>
+
+            <label>
+        Email:<br>
+        <input type="email" name="email" required>
+      </label>
+
+            <label>
+        Message:<br>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </main>
+
+    <!--shared footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/BloomBoutique/includes/footer.php')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(console.error);
+    </script>
+
+    <!-- form submission logic -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name:    form.name.value.trim(),
+        email:   form.email.value.trim(),
+        message: form.message.value.trim()
+      };
+      const resp = await fetch('/BloomBoutique/api/contact_submit.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await resp.json();
+      const out = document.getElementById('contact-messages');
+      if (result.success) {
+        out.innerHTML = `
+          <div class="alert success">
+            Thank you! Your message has been sent.
+          </div>`;
+        form.reset();
+      } else {
+        out.innerHTML = `
+          <div class="alert danger">
+            <ul>${result.errors.map(err=>`<li>${err}</li>`).join('')}</ul>
+          </div>`;
+      }
+    });
+    </script>
+</body>
+
+</html>
